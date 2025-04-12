@@ -1,1 +1,106 @@
-<p>hi</p>
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Instagram } from "lucide-react";
+
+export default function Home() {
+  return (
+    <main className="bg-[#fdfbf6] text-[#3e3a39] min-h-screen">
+      {/* Header */}
+      <header className="p-6 border-b border-[#e0dcd5] bg-[#faf7f1]">
+        <h1 className="text-3xl font-bold">작소책방</h1>
+        <p className="text-sm mt-1">작고 소중한 책방</p>
+      </header>
+
+      {/* Main Visual */}
+      <section className="flex flex-col items-center text-center p-8">
+        <img
+          src="/홀씨이야기.jpg"
+          alt="홀씨이야기 표지"
+          className="w-full max-w-md rounded-2xl shadow-md"
+        />
+        <p className="mt-6 text-lg font-medium">
+          작은 이야기를 세상에 전하는 1인 출판사
+        </p>
+      </section>
+
+      {/* Menu */}
+      <nav className="flex justify-center gap-6 text-sm font-semibold border-t border-b border-[#e0dcd5] py-4 bg-[#faf7f1]">
+        <a href="#about">출판사 소개</a>
+        <a href="#book">도서 정보</a>
+        <a href="#contact">출판 문의</a>
+        <a href="#community">커뮤니티</a>
+      </nav>
+
+      {/* 출판사 소개 */}
+      <section id="about" className="p-8">
+        <h2 className="text-xl font-bold mb-4">출판사 소개</h2>
+        <p>
+          작지만 소소하게 큰 생각들을 세상에 흘려보내고 싶은 마음에 연 작은 출판사.
+          세상의 여러 가지 재밌는 이야기들을 보여드리고 싶습니다.
+        </p>
+        <a
+          href="https://instagram.com/jakso_bookstore"
+          className="inline-flex items-center gap-2 mt-4 text-[#6c5f3d] hover:underline"
+        >
+          <Instagram size={16} /> @jakso_bookstore
+        </a>
+      </section>
+
+      {/* 도서 정보 */}
+      <section id="book" className="p-8 bg-[#f6f4ef]">
+        <h2 className="text-xl font-bold mb-4">도서 정보</h2>
+        <Card className="max-w-xl mx-auto">
+          <CardContent className="p-6">
+            <img
+              src="/홀씨이야기.jpg"
+              alt="홀씨이야기 책 표지"
+              className="w-full rounded-xl mb-4"
+            />
+            <h3 className="text-lg font-semibold">『홀씨이야기』</h3>
+            <p className="text-sm text-gray-600 mt-1">글 허윤지 · 그림 허수지</p>
+            <p className="mt-4">
+              홀씨가 여행하며 성장하는 이야기. 부드럽고 따뜻한 그림과 함께, 우리의 작은 마음과 성장을 담은 그림책입니다.
+            </p>
+            {/* 구매링크 예정 */}
+            <Button disabled className="mt-4">구매 준비 중</Button>
+          </CardContent>
+        </Card>
+      </section>
+
+      {/* 출판문의 */}
+      <section id="contact" className="p-8">
+        <h2 className="text-xl font-bold mb-4">출판 문의</h2>
+        <p>
+          출판 제안, 협업 요청, 인터뷰 등 모든 문의는 아래 이메일 또는 인스타그램 DM으로 주세요.
+        </p>
+        <ul className="mt-4 list-disc list-inside">
+          <li>이메일: contact@jakso.kr (예시)</li>
+          <li>인스타그램: <a href="https://instagram.com/jakso_bookstore" className="underline">@jakso_bookstore</a></li>
+        </ul>
+      </section>
+
+      {/* 커뮤니티 */}
+      <section id="community" className="p-8 bg-[#f6f4ef]">
+        <h2 className="text-xl font-bold mb-4">커뮤니티</h2>
+        <p>
+          독자 후기, 작가의 노트, 응원의 말들을 모아두는 공간입니다. 또한,
+          <a
+            href="https://tumblbug.com/jakso/story"
+            className="underline ml-1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            작소상점 텀블벅 프로젝트 스토리
+          </a>
+          에서 더 많은 이야기를 확인하실 수 있어요.
+        </p>
+      </section>
+
+      {/* Footer */}
+      <footer className="p-6 text-center text-sm text-gray-500 border-t border-[#e0dcd5] mt-8">
+        ⓒ 2025 작소책방. All rights reserved.
+      </footer>
+    </main>
+  );
+}
